@@ -1,14 +1,14 @@
 import { Component, Vue } from 'vue-property-decorator';
 import ToolBar from '@/components/ToolBar/ToolBar.vue';
 import TreeDetails from './TreeDetails.vue';
-import CategoryEdit from './CategoryEdit.vue'
+import CategoryEdit from './CategoryEdit.vue';
 import { VNode } from 'vue';
 
 @Component({
     components: {
         ToolBar,
         TreeDetails,
-        CategoryEdit
+        CategoryEdit,
     },
 })
 export default class Index extends Vue {
@@ -23,14 +23,14 @@ export default class Index extends Vue {
                 {
                     id: 2,
                     name: '公司新闻',
-                    children: []
+                    children: [],
                 },
                 {
                     id: 3,
                     name: '行业新闻',
-                    children: []
-                }
-            ]
+                    children: [],
+                },
+            ],
         }, {
             id: 4,
             name: '一级分类目录',
@@ -50,24 +50,24 @@ export default class Index extends Vue {
                                         {
                                             id: 8,
                                             name: '无限极分类',
-                                            children: []
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
+                                            children: [],
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
         }, {
             id: 10,
             name: '其他分类',
-            children: []
-        }
+            children: [],
+        },
     ];
     props = {
         label: 'name',
-        children: 'children'
+        children: 'children',
     };
 
     deleteCategory(id: any) {
@@ -75,16 +75,16 @@ export default class Index extends Vue {
         self.$confirm('此操作将删除该分类, 是否继续?', '提示', {
             confirmButtonText: '确定',
             cancelButtonText: '取消',
-            type: 'warning'
+            type: 'warning',
         }).then(() => {
-            //========================================
+            // ========================================
             self.$notify({
                 title: '成功',
                 message: '请参照下面代码完成Api对接！',
-                type: 'success'
+                type: 'success',
             });
             self.dialogFormVisible = false;
-            //========================================删除这坨
+            // ========================================删除这坨
             // self.$Api.departDelete({id:id},r=>{
             //   self.$notify({
             //     title: '成功',
@@ -108,7 +108,7 @@ export default class Index extends Vue {
             self.categoryEditTitle = '添加顶级分类';
         } else {
             self.currentEditCategory = {};
-            self.currentEditCategory.pid = data.id;//添加子部门，把当前部门id作为新增部门pid
+            self.currentEditCategory.pid = data.id; // 添加子部门，把当前部门id作为新增部门pid
             self.categoryEditTitle = '添加“' + data.name + '”的子分类';
         }
 
@@ -122,14 +122,14 @@ export default class Index extends Vue {
 
     categoryEditChange(data: any) {
         let self = this;
-        //========================================
+        // ========================================
         self.$notify({
             title: '成功',
             message: '请参照下面代码完成Api对接！',
-            type: 'success'
+            type: 'success',
         });
         self.dialogFormVisible = false;
-        //========================================删除这坨
+        // ========================================删除这坨
         // self.$Api.departEdit({data:data},r=>{
         //   self.$message.success(self.departEditTitle+'成功！');
         //   self.init();
@@ -148,7 +148,7 @@ export default class Index extends Vue {
                     'add-category': this.addCategory,
                     'edit-category': this.editCategory,
                     'delete-category': this.deleteCategory,
-                }
+                },
             });
     }
     init() {

@@ -18,7 +18,7 @@ menu.home = {
 menu.font_icon = {
     name: '字体图标',
     icon: 'fa fa-th',
-    children: {}
+    children: {},
 };
 let icon = menu.font_icon.children;
 
@@ -39,7 +39,7 @@ icon.element_icon = {
 menu.content_manage = {
     name: '内容管理',
     icon: 'fa fa-file-text-o',
-    children: {}
+    children: {},
 };
 
 let ContentManage = menu.content_manage.children;
@@ -56,7 +56,7 @@ ContentManage.post = {
 menu.user_manage = {
     name: '用户管理',
     icon: 'fa fa-user-circle-o',
-    children: {}
+    children: {},
 };
 let UserManage = menu.user_manage.children;
 
@@ -73,7 +73,7 @@ UserManage.user = {
 menu.category_manage = {
     name: '分类管理',
     icon: 'fa fa-sitemap',
-    children: {}
+    children: {},
 };
 let CategoryManage = menu.category_manage.children;
 
@@ -87,7 +87,7 @@ CategoryManage.category = {
 menu.permission_manage = {
     name: '权限管理',
     icon: 'fa fa-qrcode',
-    children: {}
+    children: {},
 };
 let PermissionManage = menu.permission_manage.children;
 

@@ -6,12 +6,12 @@ export default class CategoryEdit extends Vue {
     @Prop(Boolean) dialogFormVisible!: boolean;
     @Prop() data!: any;
     @Prop(String) title!: string;
-    @Prop(Array) departTree!: Array<any>;
+    @Prop(Array) departTree!: any[];
 
     props = {
         value: 'id',
         label: 'name',
-        children: 'children'
+        children: 'children',
     };
     form: any = {
         id: null,
@@ -21,24 +21,28 @@ export default class CategoryEdit extends Vue {
     };
     btnLoading = false;
 
-    @Watch("data", { deep: true })
+    @Watch('data', { deep: true })
     onDataChanged() {
         if (this.data) {
-            for (let k in this.form) {
-                this.form[k] = this.data[k];
+            for (const k in this.form) {
+                if (this.form.hasOwnProperty(k)) {
+                    this.form[k] = this.data[k];
+                }
             }
         } else {
-            for (let k in this.form) {
-                this.form[k] = '';
+            for (const k in this.form) {
+                if (this.form.hasOwnProperty(k)) {
+                    this.form[k] = '';
+                }
             }
         }
     }
 
     btnOk() {
-        let errorMsg: string = "";
+        let errorMsg: string = '';
         let formData = this.form;
 
-        if (formData.name && formData.name.length <= 2) errorMsg = '分类名称必须大于2个字符';
+        if (formData.name && formData.name.length <= 2) { errorMsg = '分类名称必须大于2个字符'; }
 
         if (errorMsg) {
             this.$message.error(errorMsg);
@@ -47,6 +51,6 @@ export default class CategoryEdit extends Vue {
 
         this.$emit('val-change', this.form);
         this.btnLoading = true;
-        setTimeout(() => { this.btnLoading = false }, 1000)
+        setTimeout(() => { this.btnLoading = false; }, 1000);
     }
 }
