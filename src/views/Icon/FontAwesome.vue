@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-card class="box-card" v-for="(icons,title) in FontAwesome" :key="title">
+    <el-card class="box-card" v-for="(icons,title) in Icons" :key="title">
       <div slot="header">
         <span>{{ title }}</span>
         <a href="http://fontawesome.io/" target="_blank" style="float: right; padding: 3px 0;font-size: 12px;"
@@ -14,29 +14,5 @@
     </el-card>
   </div>
 </template>
-
-<script>
-  import FontAwesome from './FontAwesome';
-
-  export default {
-    data() {
-      return {
-        FontAwesome: FontAwesome,
-      }
-    },
-    methods: {},
-    mounted: function () {
-
-    }
-  }
-</script>
-<style lang="less">
-  .box-card {
-    border-radius: 0;
-  }
-
-  .font-awesome .el-col {
-    margin: 20px 0;
-    text-align: center;
-  }
-</style>
+<script src="./FontAwesome.ts"></script>
+<style src="./FontAwesome.css"></style>

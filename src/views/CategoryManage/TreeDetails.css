@@ -1,0 +1,10 @@
+.tree-details {
+    flex: 1;
+  }
+  .tree-details .el-button.is-circle {
+    padding: 8px;
+  }
+  .category-description {
+    text-indent: 2em;
+  }
+  

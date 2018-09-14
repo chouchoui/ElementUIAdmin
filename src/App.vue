@@ -5,15 +5,15 @@
   </div>
 </template>
 
-<script>
-  export default {
-    name: 'app',
-  }
+<script lang="ts">
+import Vue from 'vue';
+export default Vue.extend({
+  name: 'app',
+});
 </script>
 
 <style lang="less">
-  #app {
-    background-color: #222d32;
-  }
-
+#app {
+  background-color: #222d32;
+}
 </style>
